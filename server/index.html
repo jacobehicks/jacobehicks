@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="bootstrap.css">
 
-    <title>Stream Machine!</title>
+    <title>Jacob's Minecraft Server</title>
   </head>
   <body style="background-attachment: fixed">
 
@@ -104,7 +104,9 @@
             port: 25565 // optional, only if you need a custom port
         }, function (err, status) {
             if (err) {
-                return document.querySelector('.server-status-box').style.backgroundColor = '#e44c55';
+                document.querySelector('.server-status-box').style.backgroundColor = '#e44c55';
+                var todaydf = new Date(status.last_updated * 1000);  
+                document.querySelector('.last-updated').innerHTML = "Last Updated: " + todaydf.toLocaleTimeString("en-US");
             }
     
             // you can change these to your own message!
